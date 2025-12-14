@@ -1,0 +1,98 @@
+name: Todo
+description: Suggest an improvement or request a change
+title: "Todo: "
+labels:
+  - todo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion.
+        Please include enough detail so this is actionable without a follow up.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: One sentence describing the change
+      placeholder: Example Add a one click preset chooser on first run
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Highlighting
+        - Patterns and regex
+        - Vocabulary expansions
+        - Profiles and sync
+        - Content extraction
+        - Summarisation
+        - AI helpers
+        - UI and usability
+        - Packaging and release
+        - Store listing and docs
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this to you
+      options:
+        - Nice to have
+        - Important
+        - Blocking
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is the pain point or limitation today
+      placeholder: Describe what you are trying to achieve and why the current behaviour is not enough.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed solution
+      description: What should change and how should it work
+      placeholder: Include UX details such as where the button goes, default behaviour, and edge cases.
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Provide example terms, vocab, or pages where this matters
+      placeholder: Paste sample patterns, vocab lines, or a short example scenario.
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Optional but strongly recommended
+      placeholder: Drag and drop screenshots into this box.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Quick checks
+      options:
+        - label: I searched existing issues first
+          required: false
+        - label: I can explain how to test this change
+          required: false
+        - label: This request is within the extension single purpose
+          required: false
